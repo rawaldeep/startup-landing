@@ -1,0 +1,717 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inspiration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <style>
+        body{
+            width: 100vw;
+            overflow: hidden;
+        }
+        .wrapper {
+            min-height: 100vh;
+            font-family: "Roboto Slab", serif;
+            font-weight: 300;
+            color: #fff;
+            position: relative;
+          }
+          
+          .section {
+            height: 100vh;
+            font-size: 40px;
+            font-weight: 100;
+            background-color: #22a7f0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+          }
+          section:nth-child(1) {
+            background: white;
+          }
+          section:nth-child(2) {
+            background: #f64747;
+          }
+          section:nth-child(3) {
+            background: #22a7f0;
+          }
+          section:nth-child(4) {
+            background: #f9690e;
+          }
+          section:nth-child(5) {
+            background: #9b59b6;
+          }
+          section:nth-child(6) {
+            background: #03c9a9;
+          }
+          section:nth-child(7) {
+            background: #ffcc00;
+          }
+          .readSection{
+              background: #fdfdfd;
+          }
+          
+          .nav__wrapper {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 30px;
+            height: 80vh;
+            display: flex;
+            flex-flow: row wrap;
+            margin: 0 auto;
+            background: #000;
+            clip-path: polygon(46% 76%, 62% 64%, 82% 52%, 100% 27%, 100% 100%, 0 100%, 0% 91%, 28% 80%);
+            box-shadow: -6px -6px 20px 10px rgba(204,204,204,0.8);
+          }
+          .nav {
+            margin: 0 auto;
+            display: inline-flex;
+            position: absolute;
+            bottom:0;
+
+          }
+          .nav__counter {
+            font-size: 24px;
+            transition: all 0.15s ease-out;
+          }
+          .nav__datawrap{
+              width: 10%;
+          }
+          .intro{
+              align-self: center;
+          }
+          .sectionWrapper{
+              width: 100vw;
+          }
+          .sectionWrapper, .intro{
+              padding: 0 2em;
+          }
+          .sectionWrapper p a{
+              text-decoration: underline;
+              color: inherit;
+              cursor: pointer;
+          }
+          .sectionWrapper h2 img{
+              max-width: 30px;
+          }
+          .nav__title {
+            font-size: 32px;
+            font-weight: 300;
+            margin: 0 0 0.25em;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: height 0.3s ease-out, opacity 0.2s ease-out;
+          }
+          .nav__body {
+            font-weight: 100;
+            font-size: 18px;
+            font-size: 18px;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: height 0.3s ease-out, opacity 0.2s ease-out;
+          }
+          .nav li {
+            position: absolute;
+            width:13rem;
+            transition: all 0.3s ease-out;
+            margin-bottom: 1em;
+          }
+          .nav li:nth-child(2){
+              bottom: 0;
+              left: 2em;
+          }
+          .nav li:nth-child(3){
+            bottom: 1.3em;
+            left: 12vw;
+        }
+        .nav li:nth-child(4){
+            bottom: 4em;
+            left: 27vw;
+        }
+        .nav li:nth-child(5){
+            bottom: 5em;
+            width: 300px;
+            left: 40vw;
+        }
+        .nav li:nth-child(6){
+            bottom: 8.5em;
+            width: 280px;
+            left: 58vw;
+        }
+        .nav li:nth-child(7){
+            bottom: 13em;
+            left: 75vw;
+        }
+        .nav li:nth-child(8){
+            bottom: 18em;
+            left: 87vw;
+        }
+         /* .nav li:after {
+            content: "";
+            display: block;
+            border-top: 1px solid white;
+            height: 250px;
+            width: 20px;
+            position: absolute;
+            left: -30px;
+            top: 15px;
+          }*/
+          .nav li a {
+            display: block;
+            padding: 0;
+            color: #fff;
+            transition: all 0.15s ease-out;
+          }
+          .nav li a:hover {
+            background-color: transparent;
+            padding-left: 1em;
+          }
+          .nav li a:focus {
+            background-color: transparent;
+          }
+          .up{
+            position: fixed;
+            color: white;
+            right: 5em;
+            bottom: 5em;
+            transform: rotateZ(90deg);
+          }
+          .up .circle-btn--container {
+            cursor: pointer;
+          }
+          .up .circle-btn--container:hover .circle-btn--outer {
+            transform: translateX(-8px) translateZ(0);
+          }
+          .up .circle-btn--container:hover .circle-arrow--icon {
+            transform: translateX(-8px);
+          }
+          .up .circle-btn--container:hover .circle-arrow--bar {
+            transform: scaleX(0.55);
+          }
+          
+          .up .circle-btn--outer {
+            mix-blend-mode: invert;
+            cursor: pointer;
+            width: 5rem;
+            height: 5rem;
+            border: 2px solid #fdfdfd;
+            border-radius: 50%;
+            position: relative;
+            transition: transform 0.7s cubic-bezier(1, 0, 0.25, 1), opacity 0.7s cubic-bezier(0.5, 0, 0, 1), -webkit-transform 0.7s cubic-bezier(0.5, 0, 0, 1);
+          }
+          
+          .up .circle-arrow--icon {
+            position: absolute;
+            top: calc(50% - 4px);
+            left: calc(50% - 4px);
+            width: 75%;
+            height: 8px;
+            transform: translateX(0) translateZ(90deg);
+            transition: transform 0.7s cubic-bezier(1, 0, 0.25, 1);
+            will-change: transform;
+          }
+          
+          .up .circle-arrow--bar {
+            width: 200px;
+            height: 2px;
+            width: 100%;
+            background-color: #fdfdfd;
+            position: absolute;
+            top: 3px;
+            transform: translateZ(90deg);
+            transform-origin: 0 0;
+            transition: transform 0.7s cubic-bezier(1, 0, 0.25, 1), opacity 0.7s cubic-bezier(1, 0, 0.25, 1);
+            will-change: transform opacity;
+          }
+          
+          .up .circle-arrow--triangle {
+            border-bottom: solid 5px transparent;
+            border-right: solid 5px transparent;
+            border-left: solid 5px #fdfdfd;
+            border-top: solid 5px #fdfdfd;
+            transform: rotate(-45deg) translateX(-6px);
+            transform-origin: calc(50% - 6px) 0;
+            transition: .3s ease;
+            width: 0;
+            height: 0;
+          }
+          /*.nav li.active {
+            pointer-events: none;
+            padding-left: 1em;
+          }*/
+          /*.nav li.active:after {
+            width: 35px;
+            height: 400px;
+            top: 35px;
+          }*/
+          .nav li.active a div.nav__datawrap {
+            width: 300px;
+          }
+          .nav li.active .nav__counter {
+            text-decoration: underline;
+          }
+          .nav li.active .nav__title {
+            height: 40px;
+            opacity: 1;
+            overflow: visible;
+          }
+          .nav li.active .nav__body {
+            height: 100px;
+            opacity: 1;
+            overflow: visible;
+          }
+          .wrapper2{
+              position: absolute;
+              right:-100vw;
+              
+          }
+          /*.wrapperactive{
+              right: 0;
+              opacity: 1;
+          }*/
+          .wrapperactive .section{
+              width: 100vw;
+              height: 100vh;
+          }
+          .close .s-close-btn {
+            cursor: pointer;
+            width: 26px;
+            height: 26px;
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            transform: translate(-50%, -50%);
+          }
+          .close .s-close-btn__cross {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: center;
+            transition: all 0.2s ease-in-out;
+            transform: rotate(45deg);
+          }
+          .close .s-close-btn__cross::before {
+            content: '';
+            margin-top: -1px;
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: #333;
+          }
+          .close .s-close-btn__cross::after {
+            content: '';
+            margin-left: -1px;
+            width: 3px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            background: #333;
+          }
+          .close .s-close-btn::after {
+            content: '';
+            opacity: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            border: 2px solid #333;
+            border-radius: 100%;
+            transition: all 0.3s linear;
+            transform: scale(0.7);
+            box-sizing: content-box;
+          }
+          .close .s-close-btn:hover .s-close-btn__cross {
+            transform: scale(0.5) rotate(45deg);
+          }
+          .close .s-close-btn:hover:after {
+            opacity: 1;
+            transform: scale(1);
+          }
+          @media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+    .nav__wrapper{
+        width: 25%;
+        height: 100vh;
+        overflow: hidden;
+        clip-path: none;
+    }
+    .nav{
+        position: relative;
+        display: flow-root;
+        height: 100vh;
+    }
+    .nav li{
+        position: static;
+        width: 100%;
+        float: left;
+        padding: 1em 0;
+        margin: 1em;
+    }
+    .nav__counter{
+        font-size: 2em;
+    }
+    .up{
+        left:5em;
+        right:initial;
+    }
+}
+          
+    </style>
+</head>
+<body data-spy="scroll" data-target="#navbar-example">
+
+
+<div class="wrapper" >
+  
+      <nav class="nav__wrapper" id="navbar-example">
+        <ul class="nav">
+  <Span style="display: none;"><a href="#section0" style="pointer-events: none;" hidden></a></Span>
+          <li role="presentation">
+            <a href="#section1">
+              <span class="nav__counter">Idea</span>
+            </a>
+          </li>
+  
+          <li role="presentation">
+            <a href="#section2">
+              <span class="nav__counter">Establishment</span>
+            </a>
+          </li>
+  
+          <li role="presentation">
+            <a href="#section3">
+              <span class="nav__counter">Website</span>
+            </a>
+          </li>
+          
+          <li role="presentation">
+            <a href="#section4">
+              <span class="nav__counter">Intellectual Property</span>
+            </a>
+          </li>
+          
+          <li role="presentation">
+            <a href="#section5">
+              <span class="nav__counter">Personnel and Wages</span>
+            </a>
+          </li>
+          
+          <li role="presentation">
+            <a href="#section6">
+              <span class="nav__counter">Sales</span>
+            </a>
+          </li>
+          <li role="presentation">
+                <a href="#section7">
+                  <span class="nav__counter">Capital</span>
+               
+                </a>
+              </li>
+  
+        </ul>
+        <div class="up">
+                <div role="up" class="circle-btn--container">
+                        <div class="circle-btn--outer">
+                          <div class="circle-arrow--icon">
+                            <div class="circle-arrow--bar"></div>
+                            <div class="circle-arrow--triangle">
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+        </div>
+      </nav>
+      <section class="section section1" id="section0">
+          <div class="intro">
+           <p>So, You got wanna start a company!<br/> Here a handy guide on how to do it.</p>
+          </div>
+    </section>
+      <section class="section section1" id="section1">
+          <div class="sectionWrapper">
+        
+        <h2>Idea <img src="./idea-svgrepo-com.svg" alt="idea"/></h2>
+        <p>Lorem ipsum dolor sit amet 
+            consectetur adipisicing elit. 
+            Reiciendis officiis nisi alias 
+            soluta officia reprehenderit blanditiis 
+            illum facere ab id explicabo aperiam maiores consequuntur, 
+            doloremque aliquam quia nemo repudiandae voluptates.
+            <a role="readmore" href="#readmore1">Read more...</a>
+        </p>
+        </div>
+      </section>
+  
+      <section class="section section2" id="section2">
+            <div class="sectionWrapper">
+        
+                    <h2>Establishment</h2>
+                    <p>Lorem ipsum dolor sit amet 
+                        consectetur adipisicing elit. 
+                        Reiciendis officiis nisi alias 
+                        soluta officia reprehenderit blanditiis 
+                        illum facere ab id explicabo aperiam maiores consequuntur, 
+                        doloremque aliquam quia nemo repudiandae voluptates.
+                        <a role="readmore" href="#readmore2">Read more...</a>
+                    </p>
+                    </div>
+      </section>
+  
+      <section class="section section3" id="section3">
+            <div class="sectionWrapper">
+        
+                    <h2>Website</h2>
+                    <p>Lorem ipsum dolor sit amet 
+                        consectetur adipisicing elit. 
+                        Reiciendis officiis nisi alias 
+                        soluta officia reprehenderit blanditiis 
+                        illum facere ab id explicabo aperiam maiores consequuntur, 
+                        doloremque aliquam quia nemo repudiandae voluptates.
+                        <a role="readmore" href="#readmore3">Read more...</a>
+                    </p>
+                    </div>
+      </section>
+  
+      <section class="section section4" id="section4">
+            <div class="sectionWrapper">
+        
+                    <h2>Intellectual Property</h2>
+                    <p>Lorem ipsum dolor sit amet 
+                        consectetur adipisicing elit. 
+                        Reiciendis officiis nisi alias 
+                        soluta officia reprehenderit blanditiis 
+                        illum facere ab id explicabo aperiam maiores consequuntur, 
+                        doloremque aliquam quia nemo repudiandae voluptates.
+                        <a role="readmore" href="#readmore4">Read more...</a>
+                    </p>
+                    </div>
+      </section>
+  
+      <section class="section section5" id="section5">
+            <div class="sectionWrapper">
+        
+                    <h2>Personnel & Wages</h2>
+                    <p>Lorem ipsum dolor sit amet 
+                        consectetur adipisicing elit. 
+                        Reiciendis officiis nisi alias 
+                        soluta officia reprehenderit blanditiis 
+                        illum facere ab id explicabo aperiam maiores consequuntur, 
+                        doloremque aliquam quia nemo repudiandae voluptates.
+                        <a role="readmore" href="#readmore5">Read more...</a>
+                    </p>
+                    </div>
+      </section>
+  
+      <section class="section section6" id="section6">
+            <div class="sectionWrapper">
+        
+                    <h2>Sales</h2>
+                    <p>Lorem ipsum dolor sit amet 
+                        consectetur adipisicing elit. 
+                        Reiciendis officiis nisi alias 
+                        soluta officia reprehenderit blanditiis 
+                        illum facere ab id explicabo aperiam maiores consequuntur, 
+                        doloremque aliquam quia nemo repudiandae voluptates.
+                        <a role="readmore" href="#readmore6">Read more...</a>
+                    </p>
+                    </div>
+      </section>
+      <section class="section section4" id="section7">
+            <div class="sectionWrapper">
+        
+                    <h2>capital</h2>
+                    <p>Lorem ipsum dolor sit amet 
+                        consectetur adipisicing elit. 
+                        Reiciendis officiis nisi alias 
+                        soluta officia reprehenderit blanditiis 
+                        illum facere ab id explicabo aperiam maiores consequuntur, 
+                        doloremque aliquam quia nemo repudiandae voluptates.
+                        <a role="readmore" href="#readmore7">Read more...</a>
+                    </p>
+                    </div>
+    </section>
+  
+  
+</div>
+
+        <div class="wrapper2">
+                <div class="section readSection" id="readmore1">
+                    <div class="sectionwrapper">
+            <h2>Idea</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Esse quod consequatur non laudantium, aspernatur sapiente. 
+                Voluptates, eaque. Tempora ipsam maxime iste, sed incidunt recusandae, 
+                explicabo non provident reprehenderit nisi architecto.</p>
+                </div>
+            <span role='close' class="close"> <div class="s-close-btn">
+                    <div class="s-close-btn__cross"></div>
+                      </div></span>
+                </div>
+        </div>
+        <div class="wrapper2">
+                <div class="section readSection" id="readmore2">
+            something else
+            <span role='close' class="close">
+                <div class="s-close-btn">
+                <div class="s-close-btn__cross"></div>
+                  </div>
+                </span>
+                </div>
+        </div>
+        <div class="wrapper2">
+                <div class="section readSection" id="readmore3">
+            something else
+            <span role='close' class="close">
+                    <div class="s-close-btn">
+                            <div class="s-close-btn__cross"></div>
+                          </div>
+            </span>
+                </div>
+        </div>
+        <div class="wrapper2">
+                <div class="section readSection" id="readmore4">
+            something else
+            <span role='close' class="close">   <div class="s-close-btn">
+                    <div class="s-close-btn__cross"></div>
+                  </div></span>
+                </div>
+        </div>
+        <div class="wrapper2">
+                <div class="section readSection" id="readmore5">
+            something else
+            <span role='close' class="close">   <div class="s-close-btn">
+                    <div class="s-close-btn__cross"></div>
+                  </div></span>
+                </div>
+        </div>
+        <div class="wrapper2">
+                <div class="section readSection" id="readmore6">
+            something else
+            <span role='close' class="close">   <div class="s-close-btn">
+                    <div class="s-close-btn__cross"></div>
+                  </div></span>
+                </div>
+        </div>
+        <div class="wrapper2">
+                <div class="section readSection" id="readmore7">
+            something else
+            <span role='close' class="close">   <div class="s-close-btn">
+                    <div class="s-close-btn__cross"></div>
+                  </div></span>
+                </div>
+        </div>
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+            $(document).ready(()=>{
+              //  let el = document.querySelectorAll('[role=presentation]');
+               // Object.keys(el).forEach(function (index) {
+                 //   console.log(parseInt(index, 10)+1);
+                    //$(el[index]).css('left', ((parseInt(index, 10)+parseInt(index, 10)*10)+1)+'em');
+              //      console.log(el[index]); // value
+               // });
+
+                //$(el).css("left", "1em");
+                //$(el[i]).css("left", ((i+1)*2)+'em');
+                //console.log(i);
+            
+            $('[role=presentation]').hover((e)=>{
+                let targParent = e.currentTarget;
+               $(targParent).addClass("active"); 
+              })
+             $('[role=presentation]').mouseleave((e)=>{
+                let targParent = e.currentTarget;
+                $(targParent).removeClass("active");
+              })
+        // SMOOTH SCROLLING SECTIONS
+        let tag = $(`a[href*="#"]:not([href="#"]):not([role=readmore])`);
+        let mark = $(`a[role=readmore]`);
+        let close = $(`span[role=close]`);
+        let up = $(`div[role=up]`);
+       
+            $(tag).click(function() {
+                if (
+                  location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "")
+                ) {
+                  let target = $(this.hash);
+                  target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+                  if (target.length) {
+                    $("html,body").animate(
+                      {
+                        scrollTop: target.offset().top
+                      },
+                      1000
+                    );
+                    return false;
+                  }
+                }
+              });
+              $(up).click(function() {
+                  let target = $('#section0');
+                    $("html,body").animate(
+                      {
+                        scrollTop: target.offset().top
+                      },
+                      1000
+                    );
+              });
+              $(mark).click(function(e){
+                let bodyRect = document.body.getBoundingClientRect(),
+                    elemRect = e.currentTarget.parentElement.parentElement.getBoundingClientRect(),
+                    offset   = elemRect.top - bodyRect.top;
+                  let target = e.currentTarget.hash;
+                  //target = target.replace('#', "")
+                  if (target.length) {
+                    $(target).parent().animate({
+                        right: 0,
+                        top: offset+"px",
+                        opacity: 1
+                    },
+                    "slow")
+                    $(target).parent().addClass('wrapperactive', {duration:1000})
+                    
+                    return false;
+                  }
+                  e.preventDefault();
+              })
+              $(close).click(function(e){
+                  let target = e.currentTarget.parentElement.parentElement;
+                  $(target).removeClass('wrapperactive', {duration:1500})
+                  if (target) {
+                    $(target).animate({
+                        right: '-100%',
+                        top:0,
+                        opacity: 0,
+                    },
+                    { duration: 500 }, 'linear')
+                    
+                    
+                    return false;
+                  }
+
+              })
+        })
+
+
+  
+    </script>
+
+</html>
