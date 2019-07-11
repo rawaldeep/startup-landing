@@ -28,44 +28,55 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
+            scroll-snap-type: y proximity;
           }
-          section:nth-child(2) {
-            background: white;
+          .section1 {
+            background-image: linear-gradient(to bottom, rgba(90, 255, 21, 0.6) 0%, rgba(0, 183, 18, 0.6) 100%), url('./plant.jpg');
+            background-size: cover;
+            background-position: 50% 27%;
           }
-          section:nth-child(3) {
-            background: #f64747;
+          .section2 {
+            background-image:  linear-gradient(to right, rgba(15, 32, 39, 0.6), rgba(32, 58, 67, 0.6), rgba(44, 83, 100, 0.6)), url('./establishment.jpg');
+            background-size: cover;
+            background-position: 50% 27%;
+            /*background: #f64747;*/
           }
-          section:nth-child(4) {
-            background: #22a7f0;
+          .section3 {
+            background-image:  linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(67, 67, 67, 0.6)), url('./website.jpg');
+            background-size: cover;
+            background-position: 50% 27%;
+            /*background: #22a7f0;*/
           }
-          section:nth-child(5) {
+          .section4 {
             background: #f9690e;
           }
-          section:nth-child(6) {
+          .section5 {
             background: #9b59b6;
           }
-          section:nth-child(7) {
+          .section6 {
             background: #03c9a9;
           }
-          section:nth-child(8) {
+          .section7 {
             background: #ffcc00;
           }
           .readSection{
               background: #fdfdfd;
           }
-          
           .nav__wrapper {
             position: fixed;
-            bottom: 0;
             width: 100%;
             padding: 30px;
-            height: 115vh;
+            height: 100vh;
             display: flex;
             flex-flow: row wrap;
             margin: 0 auto;
-            background: #000;
-            clip-path: polygon(46% 76%, 62% 64%, 82% 52%, 100% 27%, 100% 100%, 0 100%, 0% 91%, 28% 80%);
-            box-shadow: -6px -6px 20px 10px rgba(204,204,204,0.8);
+            /*background: #000;
+            clip-path: polygon(46% 76%, 62% 64%, 82% 52%, 100% 27%, 100% 100%, 0 100%, 0% 91%, 28% 80%);*/
+            clip-path: polygon(100% 18%, 100% 100%, 70% 100%, 0 100%, 0 77%, 52% 51%);
+            background-image: url('./clip.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 70%;
           }
           .nav {
             margin: 0 auto;
@@ -88,10 +99,12 @@
               font-weight: bold;
           }
           .sectionWrapper{
-              width: 100vw;
+              width: 80vw;
           }
           .sectionWrapper, .intro{
+            width: 100vw;
               padding: 0 4em 0 2em;
+              scroll-snap-align: start;
           }
           .sectionWrapper p{
             font-size: 32px;
@@ -125,51 +138,70 @@
             transition: height 0.3s ease-out, opacity 0.2s ease-out;
           }
           .nav li {
-            position: absolute;
+            position: relative;
             width:13rem;
             transition: all 0.3s ease-out;
             margin-bottom: 1em;
           }
-          .nav li:nth-child(2){
-              bottom: 2em;
-              left: 2em;
+          .nav li::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 1.5em;
+            background: #fff;
           }
-          .nav li:nth-child(3){
-            bottom: 4em;
-            left: 12vw;
+          .nav li:nth-child(1){
+              bottom: 6vh;
+              left: 0em;
+          }
+          .nav li:nth-child(2){
+            bottom: 10vh;
+            left: 0vw;
+        }
+        .nav li:nth-child(3){
+            bottom: 15vh;
+            left: 6vw;
         }
         .nav li:nth-child(4){
-            bottom: 7em;
-            left: 27vw;
+            bottom: 22vh;
+            width: 300px;
+            left: 9vw;
         }
         .nav li:nth-child(5){
-            bottom: 8.5em;
-            width: 300px;
-            left: 40vw;
+            bottom: 35vh;
+            width: 280px;
+            left: 8vw;
         }
         .nav li:nth-child(6){
-            bottom: 16.5em;
-            width: 280px;
-            left: 61vw;
+            bottom: 45vh;
+            left: 3vw;
         }
         .nav li:nth-child(7){
-            bottom: 22em;
-            left: 79vw;
+            bottom: 54vh;
+            left: 1vw;
         }
-        .nav li:nth-child(8){
-            bottom: 28em;
-            left: 87vw;
+        .nav li:nth-child(1)::before {
+          margin: 0 0 0 1em;
+          transition: 0.3 ease-in-out transform;
         }
-         /* .nav li:after {
-            content: "";
-            display: block;
-            border-top: 1px solid white;
-            height: 250px;
-            width: 20px;
-            position: absolute;
-            left: -30px;
-            top: 15px;
-          }*/
+        .nav li:nth-child(2)::before {
+          margin: 0 0 0.5em 5em;
+        }
+        .nav li:nth-child(3)::before {
+          margin: 0 0 0.5em 2em;
+        }
+        .nav li:nth-child(4)::before {
+          margin: 0 0 1em 5em;
+        }
+        .nav li:nth-child(5)::before {
+          margin: 0 0 1.3em 5em;
+        }
+        .nav li:nth-child(6)::before {
+          margin: 0 0 0.6em 1em;
+        }
+        .nav li:nth-child(7)::before {
+          margin: 0 0 0.5em 1em;
+        }
           #section0{
             background: linear-gradient(to bottom, rgba(255, 168, 76, 0.6) 0%, rgba(255, 123, 13, 0.6) 100%),  url('./sky.jpg');
             background-repeat: no-repeat;
@@ -186,7 +218,7 @@
           }
           .nav li a:hover {
             background-color: transparent;
-            padding-left: 1em;
+            
           }
           .nav li a:focus {
             background-color: transparent;
@@ -195,7 +227,7 @@
             position: fixed;
             color: white;
             right: 5vw;
-            bottom: 5vh;
+            top: 5vh;
             transform: rotateZ(90deg);
           }
           .text > span {
@@ -262,39 +294,21 @@
             width: 0;
             height: 0;
           }
-          /*.nav li.active {
-            pointer-events: none;
-            padding-left: 1em;
-          }*/
-          /*.nav li.active:after {
-            width: 35px;
-            height: 400px;
-            top: 35px;
-          }*/
+          .nav li.active::before{
+            transform: scale(1.5);
+          }
           .nav li.active a div.nav__datawrap {
             width: 300px;
           }
           .nav li.active .nav__counter {
             text-decoration: underline;
           }
-          .nav li.active .nav__title {
-            height: 40px;
-            opacity: 1;
-            overflow: visible;
-          }
-          .nav li.active .nav__body {
-            height: 100px;
-            opacity: 1;
-            overflow: visible;
-          }
           .wrapper2{
               position: absolute;
-              right:-100vw;
+              right:-200vw;
+              top:-200vh
           }
-          /*.wrapperactive{
-              right: 0;
-              opacity: 1;
-          }*/
+          
           .wrapperactive .section{
               width: 100vw;
               height: 0;
@@ -368,243 +382,7 @@
             width: 490px;
             min-height: 240px;
           }
-          /*bird animation\/
-          .birds{
-            z-index: 1;
-            position: absolute;
-            width: 100vw;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 35rem;
-          }
-          .bird {
-            background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg);
-            background-size: auto 100%;
-            width: 88px;
-            height: 125px;
-            will-change: background-position;
-            -webkit-animation-name: fly-cycle;
-                    animation-name: fly-cycle;
-            -webkit-animation-timing-function: steps(10);
-                    animation-timing-function: steps(10);
-            -webkit-animation-iteration-count: infinite;
-                    animation-iteration-count: infinite;
-          }
-          .bird--one {
-            -webkit-animation-duration: 1s;
-                    animation-duration: 1s;
-            -webkit-animation-delay: -0.5s;
-                    animation-delay: -0.5s;
-          }
-          .bird--two {
-            -webkit-animation-duration: 0.9s;
-                    animation-duration: 0.9s;
-            -webkit-animation-delay: -0.75s;
-                    animation-delay: -0.75s;
-          }
-          .bird--three {
-            -webkit-animation-duration: 1.25s;
-                    animation-duration: 1.25s;
-            -webkit-animation-delay: -0.25s;
-                    animation-delay: -0.25s;
-          }
-          .bird--four {
-            -webkit-animation-duration: 1.1s;
-                    animation-duration: 1.1s;
-            -webkit-animation-delay: -0.5s;
-                    animation-delay: -0.5s;
-          }
           
-          .bird-container {
-            position: absolute;
-            top: 20%;
-            left: -10%;
-            -webkit-transform: scale(0) translateX(-10vw);
-                    transform: scale(0) translateX(-10vw);
-            will-change: transform;
-            -webkit-animation-name: fly-right-one;
-                    animation-name: fly-right-one;
-            -webkit-animation-timing-function: linear;
-                    animation-timing-function: linear;
-            -webkit-animation-iteration-count: infinite;
-                    animation-iteration-count: infinite;
-          }
-          .bird-container--one {
-            -webkit-animation-duration: 15s;
-                    animation-duration: 15s;
-            -webkit-animation-delay: 0;
-                    animation-delay: 0;
-          }
-          .bird-container--two {
-            -webkit-animation-duration: 16s;
-                    animation-duration: 16s;
-            -webkit-animation-delay: 1s;
-                    animation-delay: 1s;
-          }
-          .bird-container--three {
-            -webkit-animation-duration: 14.6s;
-                    animation-duration: 14.6s;
-            -webkit-animation-delay: 9.5s;
-                    animation-delay: 9.5s;
-          }
-          .bird-container--four {
-            -webkit-animation-duration: 16s;
-                    animation-duration: 16s;
-            -webkit-animation-delay: 10.25s;
-                    animation-delay: 10.25s;
-          }
-          
-          @-webkit-keyframes fly-cycle {
-            100% {
-              background-position: -900px 0;
-            }
-          }
-          
-          @keyframes fly-cycle {
-            100% {
-              background-position: -900px 0;
-            }
-          }
-          @-webkit-keyframes fly-right-one {
-            0% {
-              -webkit-transform: scale(0.3) translateX(-10vw);
-                      transform: scale(0.3) translateX(-10vw);
-            }
-            10% {
-              -webkit-transform: translateY(2vh) translateX(10vw) scale(0.4);
-                      transform: translateY(2vh) translateX(10vw) scale(0.4);
-            }
-            20% {
-              -webkit-transform: translateY(0vh) translateX(30vw) scale(0.5);
-                      transform: translateY(0vh) translateX(30vw) scale(0.5);
-            }
-            30% {
-              -webkit-transform: translateY(4vh) translateX(50vw) scale(0.6);
-                      transform: translateY(4vh) translateX(50vw) scale(0.6);
-            }
-            40% {
-              -webkit-transform: translateY(2vh) translateX(70vw) scale(0.6);
-                      transform: translateY(2vh) translateX(70vw) scale(0.6);
-            }
-            50% {
-              -webkit-transform: translateY(0vh) translateX(90vw) scale(0.6);
-                      transform: translateY(0vh) translateX(90vw) scale(0.6);
-            }
-            60% {
-              -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
-                      transform: translateY(0vh) translateX(110vw) scale(0.6);
-            }
-            100% {
-              -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
-                      transform: translateY(0vh) translateX(110vw) scale(0.6);
-            }
-          }
-          @keyframes fly-right-one {
-            0% {
-              -webkit-transform: scale(0.3) translateX(-10vw);
-                      transform: scale(0.3) translateX(-10vw);
-            }
-            10% {
-              -webkit-transform: translateY(2vh) translateX(10vw) scale(0.4);
-                      transform: translateY(2vh) translateX(10vw) scale(0.4);
-            }
-            20% {
-              -webkit-transform: translateY(0vh) translateX(30vw) scale(0.5);
-                      transform: translateY(0vh) translateX(30vw) scale(0.5);
-            }
-            30% {
-              -webkit-transform: translateY(4vh) translateX(50vw) scale(0.6);
-                      transform: translateY(4vh) translateX(50vw) scale(0.6);
-            }
-            40% {
-              -webkit-transform: translateY(2vh) translateX(70vw) scale(0.6);
-                      transform: translateY(2vh) translateX(70vw) scale(0.6);
-            }
-            50% {
-              -webkit-transform: translateY(0vh) translateX(90vw) scale(0.6);
-                      transform: translateY(0vh) translateX(90vw) scale(0.6);
-            }
-            60% {
-              -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
-                      transform: translateY(0vh) translateX(110vw) scale(0.6);
-            }
-            100% {
-              -webkit-transform: translateY(0vh) translateX(110vw) scale(0.6);
-                      transform: translateY(0vh) translateX(110vw) scale(0.6);
-            }
-          }
-          @-webkit-keyframes fly-right-two {
-            0% {
-              -webkit-transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-                      transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-            }
-            10% {
-              -webkit-transform: translateY(0vh) translateX(10vw) scale(0.4);
-                      transform: translateY(0vh) translateX(10vw) scale(0.4);
-            }
-            20% {
-              -webkit-transform: translateY(-4vh) translateX(30vw) scale(0.6);
-                      transform: translateY(-4vh) translateX(30vw) scale(0.6);
-            }
-            30% {
-              -webkit-transform: translateY(1vh) translateX(50vw) scale(0.45);
-                      transform: translateY(1vh) translateX(50vw) scale(0.45);
-            }
-            40% {
-              -webkit-transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-                      transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-            }
-            50% {
-              -webkit-transform: translateY(0vh) translateX(90vw) scale(0.45);
-                      transform: translateY(0vh) translateX(90vw) scale(0.45);
-            }
-            51% {
-              -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
-                      transform: translateY(0vh) translateX(110vw) scale(0.45);
-            }
-            100% {
-              -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
-                      transform: translateY(0vh) translateX(110vw) scale(0.45);
-            }
-          }
-          @keyframes fly-right-two {
-            0% {
-              -webkit-transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-                      transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-            }
-            10% {
-              -webkit-transform: translateY(0vh) translateX(10vw) scale(0.4);
-                      transform: translateY(0vh) translateX(10vw) scale(0.4);
-            }
-            20% {
-              -webkit-transform: translateY(-4vh) translateX(30vw) scale(0.6);
-                      transform: translateY(-4vh) translateX(30vw) scale(0.6);
-            }
-            30% {
-              -webkit-transform: translateY(1vh) translateX(50vw) scale(0.45);
-                      transform: translateY(1vh) translateX(50vw) scale(0.45);
-            }
-            40% {
-              -webkit-transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-                      transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-            }
-            50% {
-              -webkit-transform: translateY(0vh) translateX(90vw) scale(0.45);
-                      transform: translateY(0vh) translateX(90vw) scale(0.45);
-            }
-            51% {
-              -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
-                      transform: translateY(0vh) translateX(110vw) scale(0.45);
-            }
-            100% {
-              -webkit-transform: translateY(0vh) translateX(110vw) scale(0.45);
-                      transform: translateY(0vh) translateX(110vw) scale(0.45);
-            }
-          }
-          
-          /*bird animation/\*/
           @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)  {
@@ -638,10 +416,9 @@ and (max-device-width : 1024px)  {
     </style>
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
-<div class="wrapper" >
+<div class="wrapper">
       <nav class="nav__wrapper" id="navbar-example">
         <ul class="nav">
-  <Span style="display: none;"><a href="#section0" style="pointer-events: none;" hidden></a></Span>
           <li role="presentation">
             <a href="#section1">
               <span class="nav__counter">Idea</span>
@@ -684,44 +461,26 @@ and (max-device-width : 1024px)  {
                 </a>
               </li>
         </ul>
-        <div class="up">
-                <div role="up" class="circle-btn--container">
-                        <div class="circle-btn--outer">
-                          <div class="circle-arrow--icon">
-                            <div class="circle-arrow--bar"></div>
-                            <div class="circle-arrow--triangle">
-                            </div>
-                          </div>
-                        </div>
-                        </div>
-                        <div class="text">
-                            <span>H</span>
-                            <span>O</span>
-                            <span>M</span>
-                            <span>E</span>
-                        </div>
-                        
-        </div>
-        
       </nav>
+      <div class="up">
+          <div role="up" class="circle-btn--container">
+                  <div class="circle-btn--outer">
+                    <div class="circle-arrow--icon">
+                      <div class="circle-arrow--bar"></div>
+                      <div class="circle-arrow--triangle">
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="text">
+                      <span>H</span>
+                      <span>O</span>
+                      <span>M</span>
+                      <span>E</span>
+                  </div>
+                  
+  </div>
       <div class="birds"></div>
-      <!-- <div class="birds">
-          <div class="bird-container bird-container--one">
-              <div class="bird bird--one"></div>
-            </div>
-            
-            <div class="bird-container bird-container--two">
-              <div class="bird bird--two"></div>
-            </div>
-            
-            <div class="bird-container bird-container--three">
-              <div class="bird bird--three"></div>
-            </div>
-            
-            <div class="bird-container bird-container--four">
-              <div class="bird bird--four"></div>
-            </div>
-      </div> -->
       <section class="section" id="section0">
           <div class="intro">
            <p>So, You got wanna start a company!<br/> Here a handy guide on how to do it.</p>
@@ -843,14 +602,16 @@ and (max-device-width : 1024px)  {
                 Esse quod consequatur non laudantium, aspernatur sapiente. 
                 Voluptates, eaque. Tempora ipsam maxime iste, sed incidunt recusandae, 
                 explicabo non provident reprehenderit nisi architecto.</p>
-                </div>
-            <span role='close' class="close"> <div class="s-close-btn">
+                <span role='close' class="close"> <div class="s-close-btn">
                     <div class="s-close-btn__cross"></div>
                       </div></span>
+                </div>
+            
                 </div>
         </div>
         <div class="wrapper2">
                 <div class="section readSection" id="readmore2">
+                    <div class="sectionwrapper">
             something else
             <span role='close' class="close">
                 <div class="s-close-btn">
@@ -858,47 +619,66 @@ and (max-device-width : 1024px)  {
                   </div>
                 </span>
                 </div>
+                </div>
         </div>
         <div class="wrapper2">
                 <div class="section readSection" id="readmore3">
-            something else
-            <span role='close' class="close">
-                    <div class="s-close-btn">
+                    <div class="sectionwrapper">
+                        something else
+                        <span role='close' class="close">
+                            <div class="s-close-btn">
                             <div class="s-close-btn__cross"></div>
-                          </div>
-            </span>
+                              </div>
+                            </span>
+                            </div>
                 </div>
         </div>
         <div class="wrapper2">
                 <div class="section readSection" id="readmore4">
-            something else
-            <span role='close' class="close">   <div class="s-close-btn">
-                    <div class="s-close-btn__cross"></div>
-                  </div></span>
+                    <div class="sectionwrapper">
+                        something else
+                        <span role='close' class="close">
+                            <div class="s-close-btn">
+                            <div class="s-close-btn__cross"></div>
+                              </div>
+                            </span>
+                            </div>
                 </div>
         </div>
         <div class="wrapper2">
                 <div class="section readSection" id="readmore5">
-            something else
-            <span role='close' class="close">   <div class="s-close-btn">
-                    <div class="s-close-btn__cross"></div>
-                  </div></span>
+                    <div class="sectionwrapper">
+                        something else
+                        <span role='close' class="close">
+                            <div class="s-close-btn">
+                            <div class="s-close-btn__cross"></div>
+                              </div>
+                            </span>
+                            </div>
                 </div>
         </div>
         <div class="wrapper2">
                 <div class="section readSection" id="readmore6">
-            something else
-            <span role='close' class="close">   <div class="s-close-btn">
-                    <div class="s-close-btn__cross"></div>
-                  </div></span>
+                    <div class="sectionwrapper">
+                        something else
+                        <span role='close' class="close">
+                            <div class="s-close-btn">
+                            <div class="s-close-btn__cross"></div>
+                              </div>
+                            </span>
+                            </div>
                 </div>
         </div>
         <div class="wrapper2">
                 <div class="section readSection" id="readmore7">
-            something else
-            <span role='close' class="close">   <div class="s-close-btn">
-                    <div class="s-close-btn__cross"></div>
-                  </div></span>
+                    <div class="sectionwrapper">
+                        something else
+                        <span role='close' class="close">
+                            <div class="s-close-btn">
+                            <div class="s-close-btn__cross"></div>
+                              </div>
+                            </span>
+                            </div>
                 </div>
         </div>
 
@@ -908,16 +688,6 @@ and (max-device-width : 1024px)  {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
             $(document).ready(()=>{
-              //  let el = document.querySelectorAll('[role=presentation]');
-               // Object.keys(el).forEach(function (index) {
-                 //   console.log(parseInt(index, 10)+1);
-                    //$(el[index]).css('left', ((parseInt(index, 10)+parseInt(index, 10)*10)+1)+'em');
-              //      console.log(el[index]); // value
-               // });
-
-                //$(el).css("left", "1em");
-                //$(el[i]).css("left", ((i+1)*2)+'em');
-                //console.log(i);
             
             $('[role=presentation]').hover((e)=>{
                 let targParent = e.currentTarget;
@@ -932,7 +702,15 @@ and (max-device-width : 1024px)  {
         let mark = $(`a[role=readmore]`);
         let close = $(`span[role=close]`);
         let up = $(`div[role=up]`);
-       
+        /*$(document).on( 'scroll', function(){
+          let bodyRect = document.body.getBoundingClientRect()
+          if(bodyRect.top == 0){
+            $('.up').css("display","none");
+          }else{
+            $('.up').css("display","block");
+          }
+       });*/
+        
             $(tag).click(function() {
                 if (
                   location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "")
@@ -985,13 +763,13 @@ and (max-device-width : 1024px)  {
                   e.preventDefault();
               })
               $(close).click(function(e){
-                  let target = e.currentTarget.parentElement.parentElement;
-                  let targetChild = e.currentTarget.parentElement;
+                  let target = e.currentTarget.parentElement.parentElement.parentElement;
+                  let targetChild = e.currentTarget.parentElement.parentElement;
                   $(target).removeClass('wrapperactive', {duration:1500})
                   if (target) {
                     $(target).animate({
-                        right: '-100%',
-                        top:0,
+                        right: '-200vw',
+                        top:'-200vh',
                         opacity: 0
                     },
                     { duration: 500 }, 'linear')
